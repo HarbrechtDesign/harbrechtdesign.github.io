@@ -43,15 +43,15 @@ gulp.task("css", function() {
         .pipe(gulp.dest("docs/css"))
         .pipe(browserSync.reload({ stream: true }));
 });
-
-gulp.task("js_modal", function() {
+gulp.task("js", function() {
     gulp
         .src("resources/js/modalMorph.js")
         .pipe(gulp.dest("docs/js"))
+        .pipe(browserSync.reload({ stream: true, once: true }));
+    gulp
+        .src("resources/js/projects.json")
         .pipe(gulp.dest("docs/js"))
         .pipe(browserSync.reload({ stream: true, once: true }));
-});
-gulp.task("js", function() {
     gulp
         .src(["resources/js/velocity.min.js","./node_modules/@fancyapps/fancybox/dist/jquery.fancybox.min","./node_modules/body-scroll-lock/lib/bodyScrollLock.js", "resources/js/app.js"])
         .pipe(concat("app.js"))
@@ -77,9 +77,10 @@ gulp.task("bs-reload", function() {
     browserSync.reload();
 });
 
-gulp.task("default", ["css", "js", "js_modal", "browser-sync"], function() {
+gulp.task("default", ["css", "js","browser-sync"], function() {
     gulp.watch("resources/scss/**/*.scss", ["css", "bs-reload"]);
     gulp.watch("resources/js/*.js", ["js","bs-reload"]);
-    gulp.watch("resources/js/*.js", ["js_modal","bs-reload"]);
+    gulp.watch("resources/js/*.json", ["js","bs-reload"]);
+
     gulp.watch("docs/*.html", ["bs-reload"]);
 });

@@ -420,41 +420,84 @@ body {
     padding: 9rem 0; }
   .main-wrap .col.left {
     height: 100vh;
-    position: fixed; }
+    position: fixed;
+    position: fixed;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column; }
 
 .social {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   gap: 1rem;
-  margin-top: 2rem; }
-  .social a {
-    background: rgba(3, 187, 145, 0.5);
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    padding: 0.75rem;
-    border-radius: 3px;
-    -webkit-transition: 100ms var(--standard-ease);
-    -o-transition: 100ms var(--standard-ease);
-    transition: 100ms var(--standard-ease); }
-    .social a:hover {
-      background: var(--blue); }
+  margin-top: auto;
+  --px: 1px; }
   .social svg {
-    width: 25px;
-    height: auto; }
-  .social #linkedin {
+    width: 30px;
+    height: auto;
     fill: white; }
-  .social #codepen {
-    fill: none;
-    stroke: white;
-    stroke-linecap: round;
-    stroke-linejoin: round;
-    stroke-width: 2; }
-  .social #github {
-    fill-rule: evenodd;
-    clip-rule: evenodd;
-    fill: white; }
+  .social .squircle {
+    width: calc(var(--px)*52.1);
+    height: calc(var(--px)*52.1);
+    position: relative;
+    vertical-align: middle; }
+    .social .squircle:before, .social .squircle:after,
+    .social .squircle span:before,
+    .social .squircle span:after {
+      content: '';
+      position: absolute;
+      background: var(--green);
+      -webkit-transition: 150ms var(--standard-ease);
+      -o-transition: 150ms var(--standard-ease);
+      transition: 150ms var(--standard-ease); }
+    .social .squircle:before, .social .squircle:after {
+      top: 0;
+      bottom: 0; }
+    .social .squircle:before {
+      width: 50%;
+      left: calc(var(--px)*4);
+      border-top-left-radius: 80% calc(var(--px)*10);
+      border-bottom-left-radius: 80% calc(var(--px)*10); }
+    .social .squircle:after {
+      width: calc(var(--px)*25);
+      right: calc(var(--px)*4);
+      border-top-right-radius: 80% 20%;
+      border-bottom-right-radius: 80% 20%; }
+    .social .squircle span {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      z-index: 5;
+      display: grid;
+      -webkit-box-align: center;
+          -ms-flex-align: center;
+              align-items: center;
+      -webkit-box-pack: center;
+          -ms-flex-pack: center;
+              justify-content: center; }
+      .social .squircle span:before {
+        width: calc(var(--px)*10);
+        top: calc(var(--px)*4);
+        bottom: calc(var(--px)*4);
+        border-top-left-radius: 100% 50%;
+        border-bottom-left-radius: 100% 50%; }
+      .social .squircle span:after {
+        width: calc(var(--px)*10);
+        top: calc(var(--px)*4);
+        bottom: calc(var(--px)*4);
+        right: 0;
+        border-top-right-radius: 100% 50%;
+        border-bottom-right-radius: 100% 50%;
+        z-index: 4; }
+    .social .squircle:hover:before, .social .squircle:hover:after,
+    .social .squircle:hover span:before,
+    .social .squircle:hover span:after {
+      background: var(--blue); }
 
 section {
   display: -webkit-box;
@@ -466,7 +509,6 @@ section {
           flex-direction: column;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
-  max-height: 1000px;
   gap: var(--flexGap); }
 
 body.modal-open .modal-overlay {
@@ -575,6 +617,16 @@ body.modal-open .modal-overlay {
         -webkit-transform: translate(-40%, -40%);
             -ms-transform: translate(-40%, -40%);
                 transform: translate(-40%, -40%); }
+
+.terminal {
+  width: 100%;
+  display: block;
+  position: relative;
+  height: 500px;
+  width: 100%;
+  background: #1b212c;
+  margin-bottom: var(--flexGap);
+  border-radius: 10px 10px 0 0; }
 
 .morph-content .term-head .header-btn.green::before, .morph-content .term-head .header-btn.green::after {
   border-color: transparent; }

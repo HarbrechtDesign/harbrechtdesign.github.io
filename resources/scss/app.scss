@@ -92,6 +92,9 @@ body {
 		&.left {
 			height: 100vh;
 			position: fixed;
+			position: fixed;
+			display: flex;
+			flex-direction: column;
 		}
 		&.right {
 		}
@@ -100,36 +103,77 @@ body {
 .social {
 	display: flex;
 	gap: 1rem;
-	margin-top: 2rem;
-	a {
-		background: rgba($green,0.5);
-		display: flex;
-		padding: 0.75rem;
-		border-radius: 3px;
-		transition: 100ms var(--standard-ease);
-		&:hover {
-			// background: var(--blue);
-			background: var(--blue);
-		}
-	}
+	margin-top: auto;
 	svg {
-		width: 25px;
+		width: 30px;
 		height: auto;
-	}
-	#linkedin {
 		fill: white;
 	}
-	#codepen {
-		fill: none;
-		stroke: white;
-		stroke-linecap: round;
-		stroke-linejoin: round;
-		stroke-width: 2;
-	}
-	#github {
-		fill-rule:evenodd;
-		clip-rule:evenodd;
-		fill: white;
+	--px: 1px;
+	.squircle {
+		width: calc(var(--px)*52.1);
+		height: calc(var(--px)*52.1);
+		position: relative;
+		vertical-align: middle;
+		&:before,
+		&:after,
+		span:before,
+		span:after{
+			content: '';
+			position: absolute;
+			background: var(--green);
+			transition: 150ms var(--standard-ease);
+		}
+		&:before,
+		&:after {
+			top: 0;
+			bottom: 0;
+		}
+		&:before {
+			width: 50%;
+			left: calc(var(--px)*4);
+			border-top-left-radius: 80% calc(var(--px)*10);
+			border-bottom-left-radius: 80% calc(var(--px)*10);
+		}
+		&:after {
+			width: calc(var(--px)*25);
+			right: calc(var(--px)*4);
+			border-top-right-radius: 80% 20%;
+			border-bottom-right-radius: 80% 20%;
+		}
+		span {
+			position: absolute;
+			width: 100%;
+			height: 100%;
+			z-index: 5;
+			display: grid;
+			align-items: center;
+			justify-content: center;
+			&:before {
+				width: calc(var(--px)*10);
+				top: calc(var(--px)*4);
+				bottom: calc(var(--px)*4);
+				border-top-left-radius: 100% 50%;
+				border-bottom-left-radius: 100% 50%;
+			}
+			&:after {
+				width: calc(var(--px)*10);
+				top: calc(var(--px)*4);
+				bottom: calc(var(--px)*4);
+				right: 0;
+				border-top-right-radius: 100% 50%;
+				border-bottom-right-radius: 100% 50%;
+				z-index:4;
+			}
+		}
+		&:hover {
+			&:before,
+			&:after,
+			span:before,
+			span:after{
+				background: var(--blue);
+			}
+		}
 	}
 }
 section {
@@ -139,7 +183,6 @@ section {
 	display: flex;
 	flex-direction: column;
 	flex-wrap: wrap;
-	max-height: 1000px;
 	gap: var(--flexGap);
 }
 body.modal-open {
@@ -248,6 +291,16 @@ body.modal-open {
 			}
 		}
 	}
+}
+.terminal {
+	width: 100%;
+	display: block;
+	position: relative;
+	height: 500px;
+	width: 100%;
+	background: darken($darker, 2%);
+	margin-bottom: var(--flexGap);
+	border-radius: 10px 10px 0 0;
 }
 .morph-content {
 	.term-head {
