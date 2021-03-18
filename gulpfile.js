@@ -47,7 +47,6 @@ gulp.task("css", function() {
 gulp.task("js_modal", function() {
     gulp
         .src("resources/js/modalMorph.js")
-        .pipe(concat("app.js"))
         .pipe(gulp.dest("docs/js"))
         .pipe(gulp.dest("docs/js"))
         .pipe(browserSync.reload({ stream: true, once: true }));

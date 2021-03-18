@@ -422,23 +422,39 @@ body {
     height: 100vh;
     position: fixed; }
 
-.social svg {
-  width: 30px;
-  height: auto; }
-
-.social #linkedin {
-  fill: white; }
-
-.social #codepen {
-  fill: none;
-  stroke: white;
-  stroke-linecap: round;
-  stroke-linejoin: round;
-  stroke-width: 2; }
-
-.social #github {
-  fill-rule: evenodd;
-  clip-rule: evenodd; }
+.social {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 1rem;
+  margin-top: 2rem; }
+  .social a {
+    background: rgba(3, 187, 145, 0.5);
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    padding: 0.75rem;
+    border-radius: 3px;
+    -webkit-transition: 100ms var(--standard-ease);
+    -o-transition: 100ms var(--standard-ease);
+    transition: 100ms var(--standard-ease); }
+    .social a:hover {
+      background: var(--blue); }
+  .social svg {
+    width: 25px;
+    height: auto; }
+  .social #linkedin {
+    fill: white; }
+  .social #codepen {
+    fill: none;
+    stroke: white;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    stroke-width: 2; }
+  .social #github {
+    fill-rule: evenodd;
+    clip-rule: evenodd;
+    fill: white; }
 
 section {
   display: -webkit-box;
@@ -615,6 +631,14 @@ body.modal-open .modal-overlay {
   .card h3 {
     font-size: 2.4rem;
     margin-top: 4rem;
-    margin-bottom: 1rem; }
+    margin-bottom: 2rem; }
   .card a svg {
     width: 15px; }
+  .card button {
+    border: none;
+    background: var(--purple);
+    font-size: 1.8rem;
+    padding: 0.5rem 1.25rem;
+    border-radius: 3px;
+    color: #fff;
+    cursor: pointer; }
