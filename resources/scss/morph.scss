@@ -1,0 +1,262 @@
+/* Morph Button: Default Styles */
+
+.morph {
+	&-button {
+		&::before {
+			position: fixed;
+			top: 0;
+			left: 0;
+			z-index: 800;
+			width: 100%;
+			height: 100%;
+			background: rgba(0,0,0,0.5);
+			content: '';
+			opacity: 0;
+			transition: opacity 0.5s;
+			pointer-events: none;
+		}
+		> .card {
+			// & .fixed
+			z-index: 1000;
+			transition: opacity 0.1s 0.5s;
+		}
+		&.active {
+			&::before {
+				z-index: 1800;
+			}
+			& > .card {
+				z-index: 2000;
+			}
+			.morph-content {
+				z-index: 1900;
+			}
+		}
+		// Open state
+		&.open {
+			&::before {
+				opacity: 1;
+				pointer-events: auto;
+			}
+			> .card {
+				pointer-events: none;
+				// & .fixed 
+				opacity: 0;
+				-webkit-transition: opacity 0.1s;
+				transition: opacity 0.1s;
+			}
+			.morph-content {
+				pointer-events: auto;
+				opacity: 1;
+				top: 50% !important;
+				left: 50% !important;
+				// margin: -210px 0 0 -300px;
+				margin: -40vh 0 0 -40vw;
+				width: 80vw !important;
+				height: 80vh !important;
+				transition: width 0.4s 0.1s, height 0.4s 0.1s, top 0.4s 0.1s, left 0.4s 0.1s, margin 0.4s 0.1s;
+				transition-timing-function: cubic-bezier(0.7,0,0.3,1);
+				& > .animate-wrap {
+					visibility: visible;
+					height: 100%;
+					opacity: 1;
+					transition: opacity 0.3s 0.5s;
+				}
+			}
+		}
+	}
+	&-content {
+		pointer-events: none;
+		position: fixed;
+		z-index: 900;
+		opacity: 0;
+		transition: opacity 0.3s 0.5s, width 0.4s 0.1s, height 0.4s 0.1s, top 0.4s 0.1s, left 0.4s 0.1s, margin 0.4s 0.1s;
+		transition-timing-function: cubic-bezier(0.7,0,0.3,1);
+		overflow: hidden;
+		background: var(--darker);
+		border-radius: 10px 10px 0 0;
+		.icon-close {
+			z-index: 100;
+			display: block;
+			overflow: hidden;
+			width: 2rem;
+			height: 2rem;
+			cursor: pointer;
+				position: absolute;
+				top: calc(var(--termHead) + 2rem);
+				right: 2rem;
+
+			&:hover {
+				color: #a50a05;
+			}
+			&::before,
+			&::after {
+				content: '';
+				display: block;
+				position: absolute;
+				top: 50%;
+				left: 50%;
+				width: 100%;
+				height: 2px;
+				background: $white;
+			}
+			&::before {
+				transform: translate(-50%,-50%) rotate(-45deg);
+			}
+			&::after {
+				transform: translate(-50%,-50%) rotate(45deg);
+			}
+		}
+		& > .animate-wrap {
+			visibility: hidden;
+			height: 0;
+			opacity: 0;
+			transition: opacity 0.1s, visibility 0s 0.1s, height 0s 0.1s;
+		}
+		.card {
+			justify-content: flex-start;
+		}
+	}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* Helper classes */
+.noscroll {
+	overflow: hidden;
+}
+
+
+/* No JS fallback: let's hide the button and show the content */
+.no-js .morph-button > button {
+	display: none;
+}
+
+.no-js .morph-button {
+	margin: 10px 0;
+	float: none;
+}
+
+.no-js .morph-button,
+.no-js .morph-button .morph-content,
+.no-js .morph-button .morph-content > div {
+	position: relative;
+	width: auto;
+	height: auto;
+	opacity: 1;
+	visibility: visible;
+	top: auto;
+	left: auto;
+	-webkit-transform: none;
+	transform: none;
+	pointer-events: auto;
+}
+
+.no-js .morph-button .morph-content .icon-close {
+	display: none;
+}
+
+.no-js .morph-button-sidebar {
+	width: 300px;
+	position: fixed;
+	top: 0;
+	left: 0;
+	margin: 0;
+	height: 100%;
+	background: #e85657;
+	overflow: auto;
+}
+
+.no-transition {
+	-webkit-transition: none !important;
+	transition: none !important;
+}
+
+/* Media Queries */
+
+@media screen and (max-width: 600px) {
+	.morph-button-modal.open .morph-content {
+		top: 0% !important;
+		left: 0% !important;
+		margin: 0;
+		width: 100%;
+		height: 100%;
+		overflow-y: scroll;
+		-webkit-transition: width 0.4s 0.1s, height 0.4s 0.1s, top 0.4s 0.1s, left 0.4s 0.1s;
+		transition: width 0.4s 0.1s, height 0.4s 0.1s, top 0.4s 0.1s, left 0.4s 0.1s;
+	}
+}
+
+@media screen and (max-width: 400px) {
+	.morph-button-fixed,
+	.morph-button-fixed .morph-content {
+		width: 200px;
+		height: 80px;
+	}
+
+	.morph-button-fixed > button {
+		font-size: 75%;
+	}
+
+	.morph-button-sidebar > button {
+		font-size: 1.6em;
+	}
+
+	.morph-button-inflow .morph-content .morph-clone {
+		font-size: 0.9em;
+	}
+
+	.morph-button-modal-4,
+	.morph-button-modal-4 .morph-content {
+		width: 220px;
+		height: 120px;
+	}
+
+	.morph-button-modal-4 > button {
+		font-size: 100%;
+		line-height: 50px;
+	}
+
+	.morph-button-modal-4 > button span {
+		display: block;
+	}
+
+	.morph-button-modal-4 .morph-clone {
+		right: 83px;
+		bottom: 26px;
+	}
+
+	.morph-button-sidebar,
+	.morph-button-sidebar .morph-content {
+		width: 100% !important;
+		height: 60px !important;
+	}
+
+	.morph-button-sidebar {
+		bottom: 0px;
+		left: 0px;
+	}
+
+	.morph-button-sidebar.open .morph-content {
+		height: 100% !important;
+	}
+}
+
+
+

@@ -1,0 +1,61 @@
+// antialiasing mode font rendering
+
+@mixin font-smoothing {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+$key-shadow: rgba(0,0,0,0.24);
+$ambient-shadow: rgba(0,0,0,0.16);
+
+@mixin box-shadow($dp) {
+	/* 1dp elevation */
+	@if $dp == 1dp {
+		box-shadow: 0px 2px 2.82px 0.18px $key-shadow,
+					0px 1px 3.92px 0.08px $ambient-shadow; 
+	}
+	/* 2dp elevation */
+	@else if $dp == 2dp {
+		box-shadow: 0px 3px 4.7px 0.3px $key-shadow,
+					0px 1px 6.86px 0.14px $ambient-shadow; 
+	}
+	/* 3dp elevation */
+	@else if $dp == 3dp {
+		box-shadow: 0px 5px 6.58px 0.42px $key-shadow,
+					0px 2px 9.8px 0.2px $ambient-shadow; 
+	}
+	/* 4dp elevation */
+	@else if $dp == 4dp {
+		box-shadow: 0px 7px 9.4px 0.6px $key-shadow,
+					0px 3px 12.74px 0.26px $ambient-shadow; 
+	}
+	/* 6dp elevation */
+	@else if $dp == 6dp {
+		box-shadow: 0px 10px 14.1px 0.9px $key-shadow,
+					0px 4px 19.6px 0.4px $ambient-shadow; 
+	}
+	/* 8dp elevation */
+	@else if $dp == 8dp {
+		box-shadow: 0px 13px 18.8px 1.2px $key-shadow,
+					0px 5px 26.46px 0.54px $ambient-shadow; 
+	}
+	/* 9dp elevation */
+	@else if $dp == 9dp {
+		box-shadow: 0px 18px 25.38px 1.62px $key-shadow,
+					0px 9px 35.28px 0.72px $ambient-shadow; 
+	}
+	/* 12dp elevation */
+	@else if $dp == 12dp {
+		box-shadow: 0px 20px 28.2px 1.8px $key-shadow,
+					0px 8px 40.18px 0.82px $ambient-shadow; 
+	}
+	/* 16dp elevation */
+	@else if $dp == 16dp {
+		box-shadow: 0px 28px 37.6px 2.4px $key-shadow,
+					0px 11px 51.94px 1.06px $ambient-shadow; 
+	}
+	/* 24dp elevation */
+	@else if $dp == 24dp {
+		box-shadow: 0px 39px 56.4px 3.6px $key-shadow,
+					0px 15px 79.38px 1.62px $ambient-shadow; 
+	}
+}
