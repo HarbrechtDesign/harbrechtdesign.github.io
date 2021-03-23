@@ -381,24 +381,24 @@ body.modal-open {
 	}
 }
 // resume
-#education {
-    .college {
-        school: 'Purdue University';
-        degree: 'Bachelors of Science in Computer Graphics Technology';
-        timeline: calc(2010 - 2014);
-    }
-}
-#skills {
-	languages: 'HTML5, CSS3, SCSS, JavaScript, JSON, jQuery, PHP, Shopify\'s Liquid,';
-	.platforms {
-		&__shopify {
-			experience: '4 years + 1 full theme development';
-		}
-		&__laravel {
-			experience: '2 years of basic management, low knowledge of build/deployment';
-		}
-	}
-}
+	// #education {
+	//     .college {
+	//         school: 'Purdue University';
+	//         degree: 'Bachelors of Science in Computer Graphics Technology';
+	//         timeline: calc(2010 - 2014);
+	//     }
+	// }
+	// #skills {
+	// 	languages: 'HTML5, CSS3, SCSS, JavaScript, JSON, jQuery, PHP, Shopify\'s Liquid,';
+	// 	.platforms {
+	// 		&__shopify {
+	// 			experience: '4 years + 1 full theme development';
+	// 		}
+	// 		&__laravel {
+	// 			experience: '2 years of basic management, low knowledge of build/deployment';
+	// 		}
+	// 	}
+	// }
 // end resume
 .morph-content {
 	.term-head {
