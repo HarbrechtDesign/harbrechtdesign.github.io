@@ -45,13 +45,11 @@ function sizeCards() {
 		gap += 20; // account for flex-gap of 2rem
 	});
 	gap = gap - 40; // account for no gap for bottom 2 cards
-	$(window).on("load resize",function(e){
-		if ($(window).width() > 674) {
-			$('#projects').css('max-height',(cardHeight + gap) / 2);
-		} else {
-			$('#projects').css('max-height','unset');
-		}
-	});
+	if ($(window).width() > 674) {
+		$('#projects').css('max-height',(cardHeight + gap) / 2);
+	} else {
+		$('#projects').css('max-height','unset');
+	}
 	// Size modals based on parent card
 	//=====================================================================
 	$('.card__placeholder').each(function(){
@@ -60,6 +58,13 @@ function sizeCards() {
 		$(this).find('.morph-content').css({'width':cardWidth,'height':cardHeight})
 	})
 
+	$(window).resize(function(){
+		if ($(window).width() > 674) {
+			$('#projects').css('max-height',(cardHeight + gap) / 2);
+		} else {
+			$('#projects').css('max-height','unset');
+		}
+	});
 	
 }
 
