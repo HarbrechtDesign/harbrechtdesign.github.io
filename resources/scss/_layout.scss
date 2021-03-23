@@ -11,14 +11,14 @@ $xxl: 1650px;
 
 // media queries
 
-@mixin media($canvas) {
-  @if $canvas == S {
-   @media only screen and (min-width: $S) { @content; } 
+@mixin media($size) {
+  @if $size == sm {
+   @media only screen and (min-width: $ms) { @content; } 
   }
-  @else if $canvas == M {
-   @media only screen and (min-width: $M) { @content; } 
+  @else if $size == md {
+   @media only screen and (min-width: $md) { @content; } 
   }
-  @else if $canvas == L {
-   @media only screen and (min-width: $L) { @content; } 
+  @else if $size == lg {
+   @media only screen and (min-width: $lg) { @content; } 
   }
 }

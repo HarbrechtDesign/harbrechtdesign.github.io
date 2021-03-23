@@ -380,7 +380,7 @@ a {
   position: unset; }
 
 body {
-  font-family: Gothic A1, -apple-system, blinkmacsystemfont, "Segoe UI", roboto, helvetica, arial, sans-serif;
+  font-family: "Gothic A1", -apple-system, blinkmacsystemfont, "Segoe UI", roboto, helvetica, arial, sans-serif;
   font-size: 2.2rem;
   font-weight: 300;
   line-height: 1.4;
@@ -393,7 +393,7 @@ body {
   overflow-x: hidden; }
 
 .gradient {
-  z-index: 900;
+  z-index: 9999;
   width: 100%;
   position: fixed;
   left: 0;
@@ -622,11 +622,64 @@ body.modal-open .modal-overlay {
   width: 100%;
   display: block;
   position: relative;
-  height: 500px;
   width: 100%;
   background: #1b212c;
   margin-bottom: var(--flexGap);
   border-radius: 10px 10px 0 0; }
+  .terminal .editor {
+    padding: 1.8rem 1.8rem 1.8rem 1.2rem;
+    margin-top: var(--termHead); }
+  .terminal pre {
+    padding: 0 4px;
+    border-radius: 0;
+    border-width: 0;
+    margin: 0;
+    z-index: 2;
+    position: relative;
+    line-height: 152%;
+    font-family: "Source Code Pro", monospace;
+    font-size: 14px;
+    font-weight: 400; }
+  .terminal span {
+    color: #e9eded; }
+    .terminal span.cm-tag {
+      color: #ff5370; }
+    .terminal span.cm-qualifier {
+      color: #ffca57; }
+    .terminal span.cm-operator {
+      color: #e9eded !important; }
+    .terminal span.cm-tab {
+      display: inline-block;
+      text-decoration: inherit; }
+    .terminal span.cm-id-extender {
+      color: #d18df0; }
+    .terminal span.cm-property {
+      color: #accdd7; }
+    .terminal span.cm-atom {
+      color: #ff8563; }
+    .terminal span.cs-atom-paren {
+      color: #79a9ff; }
+    .terminal span.cm-string {
+      color: #c3e88d !important; }
+    .terminal span.cm-comment {
+      color: #718d9a;
+      color: 'text goes here'; }
+    .terminal span.cm-attribute {
+      color: #ffcb6b; }
+    .terminal span.cm-string {
+      color: #c3e88d; }
+
+#education .college {
+  school: 'Purdue University';
+  degree: 'Bachelors of Science in Computer Graphics Technology';
+  timeline: calc(2010 - 2014); }
+
+#skills {
+  languages: 'HTML5, CSS3, SCSS, JavaScript, JSON, jQuery, PHP, Shopify\'s Liquid,'; }
+  #skills .platforms__shopify {
+    experience: '4 years + 1 full theme development'; }
+  #skills .platforms__laravel {
+    experience: '2 years of basic management, low knowledge of build/deployment'; }
 
 .morph-content .term-head .header-btn.green::before, .morph-content .term-head .header-btn.green::after {
   border-color: transparent; }

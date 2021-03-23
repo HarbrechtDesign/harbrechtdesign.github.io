@@ -62,7 +62,7 @@ body {
 	}
 }
 .gradient {
-	z-index: 900;
+	z-index: 9999;
 	width: 100%;
 	position: fixed;
 	left: 0;
@@ -296,12 +296,110 @@ body.modal-open {
 	width: 100%;
 	display: block;
 	position: relative;
-	height: 500px;
+	// height: 500px;
 	width: 100%;
 	background: darken($darker, 2%);
 	margin-bottom: var(--flexGap);
 	border-radius: 10px 10px 0 0;
+	// code color scheme 
+	.editor {
+		padding: 1.8rem 1.8rem 1.8rem 1.2rem;
+		margin-top: var(--termHead);
+	}
+	pre {
+		padding: 0 4px;
+		border-radius: 0;
+		border-width: 0;
+		margin: 0;
+		z-index: 2;
+		position: relative;
+		line-height: 152%;
+		font: {
+			family: $font-code;
+			size: 14px;
+			weight: $text-regular;
+		}
+	}
+	span {
+		
+		color: rgb(233, 237, 237); // white
+		// CSS
+		// HTML Element selector
+		&.cm-tag {
+			color: rgb(255, 83, 112); // red
+		}
+		// Class/ID
+		&.cm-qualifier {
+			// color: #decb6b;
+			color: #ffca57
+		}
+		// Operator such as {} or ;
+		&.cm-operator {
+			color: rgb(233, 237, 237) !important;
+		}
+		// Empty space (4 spaces = 1 tab)
+		&.cm-tab {
+			display: inline-block;
+			text-decoration: inherit;
+		}
+		// CSS Property extender like & or an ID
+		&.cm-id-extender {
+			color: #d18df0;
+		}
+		// CSS Property
+		&.cm-property {
+			// color: rgb(128, 203, 174) !important
+			color: #accdd7;
+		}
+		// CSS Property Value
+		&.cm-atom {
+			// color: #f78c6c;
+			color: #ff8563;
+		}
+		// CSS Property value that starts with paren like rgb
+		&.cs-atom-paren {
+			color: #79a9ff;
+		}
+		// Property Value String
+		&.cm-string {
+			color: rgb(195, 232, 141) !important;
+		}
+		// CSS Comment
+		&.cm-comment {
+			// color: rgb(84, 110, 122) !important;
+			color: #718d9a;
+			color: 'text goes here';
+		}
+
+		// HTML
+		&.cm-attribute {
+		    color: rgb(255, 203, 107); // yellow
+		}
+		&.cm-string {
+		    color: rgb(195, 232, 141); // green
+		}
+	}
 }
+// resume
+#education {
+    .college {
+        school: 'Purdue University';
+        degree: 'Bachelors of Science in Computer Graphics Technology';
+        timeline: calc(2010 - 2014);
+    }
+}
+#skills {
+	languages: 'HTML5, CSS3, SCSS, JavaScript, JSON, jQuery, PHP, Shopify\'s Liquid,';
+	.platforms {
+		&__shopify {
+			experience: '4 years + 1 full theme development';
+		}
+		&__laravel {
+			experience: '2 years of basic management, low knowledge of build/deployment';
+		}
+	}
+}
+// end resume
 .morph-content {
 	.term-head {
 		.header-btn.green {

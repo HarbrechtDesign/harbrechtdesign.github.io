@@ -22,7 +22,7 @@
 
 		<!-- Fonts -->
 		<link rel="preconnect" href="https://fonts.gstatic.com">
-		<link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@300;400;600&display=swap" rel="stylesheet"> 
+		<link href="https://fonts.googleapis.com/css2?family=Gothic+A1:wght@300;400;700&family=Source+Code+Pro&display=swap" rel="stylesheet"> 
 
 		<!-- CSS -->
 		<link rel="stylesheet" href="/css/jquery.fancybox.min.css">
@@ -43,7 +43,7 @@
 		<div class="main-wrap">
 			<div class="grid-placeholder"></div>
 			<div class="col left">
-				<h1>Hi, I'm <br>Cameron.</h1>
+				<h1>Hi, I&rsquo;m <br>Cameron.</h1>
 				<p>I'm a web developer specializing in UI/UX, with knack for CSS. I love building sleek, modern user experiences. I'm currently building great things at <a class="special" href="https://www.grossbauer.com" target="_blank" rel="noopener">The Grossbauer Group.</a></p>
 				<div class="social">
 					<!-- <div class="profile">
@@ -75,7 +75,7 @@
 							<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 97.51">
 								<path d="M49.39 0A51.78 51.78 0 0174.8 6.45 48.1 48.1 0 01100 49.19a50.38 50.38 0 01-9.38 29.94 47.9 47.9 0 01-24.49 18.25 2.65 2.65 0 01-2.52-.4 2.58 2.58 0 01-.91-2V78q0-6.45-3.43-9.27a57 57 0 0011.09-2 18 18 0 008.67-6q3.43-5.25 3.43-14.32a14.71 14.71 0 00-1.41-6.65 23.26 23.26 0 00-3.83-5 16.33 16.33 0 001-4.84A22.7 22.7 0 0076.81 21q-2-.62-5.64.8a57 57 0 00-5.65 2.83l-2.62 1.78a45.61 45.61 0 00-12.8-1.81 43.58 43.58 0 00-12.6 1.81l-2.62-1.81A46.31 46.31 0 0029 21.77q-3.63-1.41-5.44-.8a18.64 18.64 0 00-1.41 8.87 11.64 11.64 0 00.8 4.64A25.3 25.3 0 0019.46 40a15.82 15.82 0 00-1.11 6.35q0 9.08 3.22 14.11A16.36 16.36 0 0030 66.73a56.55 56.55 0 0010.89 2 11 11 0 00-3.19 6.87 11.9 11.9 0 01-6.65 1.21c-3.5-.26-6.18-2.08-8.07-5.44a10.44 10.44 0 00-3.22-3.63 20 20 0 00-3-1.41l-1.41-.2c-1.48 0-2.25.23-2.32.7s.24 1 .91 1.52l1 .8a10.08 10.08 0 012.82 2.62 13.07 13.07 0 012 3.23l.8 1.61a8.17 8.17 0 003.83 4.64 14.92 14.92 0 005.85 1.81 21 21 0 005-.2l2.22-.2L37.7 95a2.58 2.58 0 01-.91 2 2.65 2.65 0 01-2.52.4A48.39 48.39 0 019.48 79.13 50.05 50.05 0 010 49.19a49.51 49.51 0 016.45-25A46.93 46.93 0 0124.19 6.45 49.91 49.91 0 0149.39 0zm-32 67.94a.81.81 0 011-.1c.4.2.53.47.4.81s-.44.37-.91.1-.68-.54-.54-.81zm2.22 1.62c.26-.27.6-.21 1 .2s.47.74.21 1-.61.2-1-.21-.53-.73-.26-.99zm2 2.62a.89.89 0 01.71-.1.87.87 0 01.5.5c.41.54.41.94 0 1.21-.13.14-.3.14-.5 0a6.43 6.43 0 00-.71-.4c-.31-.68-.31-1.08-.04-1.21zM24 75a.62.62 0 01.61-.1 1.5 1.5 0 01.7.4 1.55 1.55 0 01.41.71.59.59 0 01-.11.6c-.4.41-.87.34-1.41-.2a1.16 1.16 0 01-.4-.81.83.83 0 01.2-.6zm3.23 2.62c.13-.54.54-.7 1.21-.5s1 .47.9.8a.93.93 0 01-.5.71.89.89 0 01-.81 0 2.74 2.74 0 01-.7-.51c-.21-.2-.25-.36-.11-.5zm6.25.81c0-.14-.1-.27-.3-.41a1.73 1.73 0 00-.91-.2c-.67 0-1 .27-1 .81s.37.77 1.11.7 1.09-.33 1.09-.9zm2.62-1.21q1 0 1.11.6c.06.41-.24.74-.91 1a2.21 2.21 0 01-.71-.1c-.2-.07-.33-.3-.4-.71s.23-.66.9-.79z"/>
 							</svg>
-							</span>
+						</span>
 					</a>
 				</div>
 			</div>
@@ -89,6 +89,40 @@
 								<div class="header-btn green"></div>
 							</div>
 						</div>
+						<figure class="editor">
+							<!-- here's a single indent span:
+								<span class="cm-tab">    </span>
+							 -->
+							<code>
+								<pre><span class="cm-comment">// Here's my resume, Now in SCSS!</span></pre>
+								<!-- Education -->
+								<pre><span class="cm-id-extender">#education</span><span class="cm-operator"> {</span></pre>
+										<pre><span class="cm-tab">    </span><span class="cm-qualifier">.college</span><span class="cm-operator"> {</span></pre>
+											<pre><span class="cm-tab">    </span><span class="cm-tab">    </span><span class="cm-property">school</span><span class="cm-operator">: </span><span class="cm-string">'Purdue University'</span><span class="cm-operator">;</span></pre>
+											<pre><span class="cm-tab">    </span><span class="cm-tab">    </span><span class="cm-property">degree</span><span class="cm-operator">: </span><span class="cm-string">'Bachelors of Science in Computer Graphics Technology'</span><span class="cm-operator">;</span></pre>
+											<pre><span class="cm-tab">    </span><span class="cm-tab">    </span><span class="cm-property">timeline</span><span class="cm-operator">: </span><span class="cm-atom">calc(2010 - 2014)</span><span class="cm-operator">;</span></pre>
+									<pre><span class="cm-tab">    </span><span class="cm-operator">}</span></pre>
+								<pre><span class="cm-operator">}</span></pre>
+								<!-- Skills -->
+								<pre><span class="cm-id-extender">#skills</span><span class="cm-operator"> {</span></pre>
+									<pre><span class="cm-tab">    </span><span class="cm-property">languages</span><span class="cm-operator">: </span><span class="cm-string"> 'HTML5, CSS3, SCSS, JavaScript, JSON, jQuery, PHP, Shopify\'s Liquid,'</span><span class="cm-operator">;</span></pre>
+									<pre><span class="cm-tab">    </span><span class="cm-property">software</span><span class="cm-operator">: </span><span class="cm-string"> 'Adobe AI, PS, Pr, Ae; MAMP, iTerm, git'</span><span class="cm-operator">;</span></pre>
+									<!-- platforms -->
+									<pre><span class="cm-tab">    </span><span class="cm-qualifier">.platforms</span><span class="cm-operator"> {</span></pre>
+										<pre><span class="cm-tab">    </span><span class="cm-tab">    </span><span class="cm-id-extender">&</span><span class="cm-qualifier">__shopify</span><span class="cm-operator"> {</span></pre>
+											<pre><span class="cm-tab">    </span><span class="cm-tab">    </span><span class="cm-tab">    </span><span class="cm-property">experience</span><span class="cm-operator">: </span><span class="cm-string">'4 years; multiple stores + 1 full ground-up theme development'</span><span class="cm-operator">;</span></pre>
+										<pre><span class="cm-tab">    </span><span class="cm-tab">    </span><span class="cm-operator">}</span></pre>
+										<pre><span class="cm-tab">    </span><span class="cm-tab">    </span><span class="cm-id-extender">&</span><span class="cm-qualifier">__laravel</span><span class="cm-operator"> {</span></pre>
+											<pre><span class="cm-tab">    </span><span class="cm-tab">    </span><span class="cm-tab">    </span><span class="cm-property">experience</span><span class="cm-operator">: </span><span class="cm-string">'2 years of basic management, low knowledge of build/deployment'</span><span class="cm-operator">;</span></pre>
+										<pre><span class="cm-tab">    </span><span class="cm-tab">    </span><span class="cm-operator">}</span></pre>
+									<pre><span class="cm-tab">    </span><span class="cm-operator">}</span></pre>
+								<pre><span class="cm-operator">}</span></pre>
+								<!-- Hobbies -->
+								<pre><span class="cm-id-extender">#hobbies</span><span class="cm-operator"> {</span></pre>
+									<pre><span class="cm-tab">    </span><span class="cm-property">outdoors</span><span class="cm-operator">: </span><span class="cm-string">'Snowboarding, Snowmobiling, &amp;amp; all around Car Enthusiast (JDM Fanboy)'</span><span class="cm-operator">;</span></pre><pre><span class="cm-tab">    </span><span class="cm-property">indoors</span><span class="cm-operator">: </span><span class="cm-string">'Acoustic Guitar, Heavy Metal Guitar, PC Gaming, PC building'</span><span class="cm-operator">;</span></pre>
+								<pre><span class="cm-operator">}</span></pre>
+							</code>
+						</figure>
 					</div>
 				</section>
 				<section id="projects">
