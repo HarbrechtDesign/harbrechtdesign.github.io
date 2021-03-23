@@ -463,6 +463,9 @@ body {
   @media (max-width: 979px) {
     .main-wrap {
       grid-template-columns: 1fr; } }
+  @media (max-width: 674px) {
+    .main-wrap {
+      padding: 0 1.5rem; } }
   @media (max-width: 979px) {
     .main-wrap .grid-placeholder {
       diplay: none; } }
@@ -790,6 +793,9 @@ section {
     -webkit-transition: var(--modalTiming) var(--standard-ease);
     -o-transition: var(--modalTiming) var(--standard-ease);
     transition: var(--modalTiming) var(--standard-ease); }
+    @media (max-width: 674px) {
+      .card__placeholder {
+        width: 100%; } }
   .card header {
     margin-top: var(--termHead); }
   .card .content {
