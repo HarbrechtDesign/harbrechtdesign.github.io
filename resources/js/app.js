@@ -13,12 +13,19 @@ function setVH() {
 
 // Size left col
 //=====================================================================
-function sizeLeftCol() {
-	var leftColSize = $('.grid-placeholder').width();
-	$('.col.left').width(leftColSize);
+function sizeLeftCol(e) {
+	$('.col.left').width(e);
+}
+function unsizeLeftCol() {
+	$('.col.left').width('auto');
 }
 $(window).on("load resize",function(e){
-	sizeLeftCol();
+	var leftColSize = $('.grid-placeholder').width();
+	if ($(window).width() > 979) {
+		sizeLeftCol(leftColSize);
+	} else {
+		unsizeLeftCol();
+	}
 });
 
 

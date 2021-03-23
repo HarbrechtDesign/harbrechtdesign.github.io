@@ -7,22 +7,7 @@ var gulp = require("gulp"),
 	uglify = require("gulp-uglify"),
 	rename = require("gulp-rename"),
 	cssnano = require("gulp-cssnano"),
-	concat = require('gulp-concat'),
-	package = require("./package.json");
-
-var banner = [
-	"/*!\n" +
-	" * <%= package.name %>\n" +
-	" * <%= package.title %>\n" +
-	" * <%= package.url %>\n" +
-	" * @author <%= package.author %>\n" +
-	" * @version <%= package.version %>\n" +
-	" * Copyright " +
-	new Date().getFullYear() +
-	". <%= package.license %> licensed.\n" +
-	" */",
-	"\n"
-].join("");
+	concat = require('gulp-concat');
 
 gulp.task("css", function() {
 	gulp
@@ -39,7 +24,6 @@ gulp.task("css", function() {
 		.pipe(gulp.dest("docs/css"))
 		.pipe(cssnano())
 		.pipe(rename({ suffix: ".min" }))
-		.pipe(header(banner, { package: package }))
 		.pipe(gulp.dest("docs/css"))
 		.pipe(browserSync.reload({ stream: true }));
 });
@@ -81,6 +65,5 @@ gulp.task("default", ["css", "js","browser-sync"], function() {
 	gulp.watch("resources/scss/**/*.scss", ["css", "bs-reload"]);
 	gulp.watch("resources/js/*.js", ["js","bs-reload"]);
 	gulp.watch("resources/js/*.json", ["js","bs-reload"]);
-
 	gulp.watch("docs/*.html", ["bs-reload"]);
 });

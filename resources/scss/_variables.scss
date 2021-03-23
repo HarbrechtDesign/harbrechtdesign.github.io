@@ -66,3 +66,15 @@ $nav-top-offset-sm: 60px;
 	--flexGap: 2rem;
 	--termHead: 28px;
 }
+
+// Breakpoints / Widths
+$max-container-width: 1650px;
+$grid-breakpoints: (xxs: 0, xs: 380px, xsm: 480px, sm: 675px, md: 980px, lg: 1200px, xl: 1440px, xxl: $max-container-width) !default;
+
+/* Bootstraps breakpoints
+  xs: min-width 380px
+  sm: min-width 675px
+  md: min-width 980px
+  lg: min-width: 1200px;
+  xl: min-width: 1650px;
+*/

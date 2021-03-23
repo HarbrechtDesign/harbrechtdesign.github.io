@@ -8,8 +8,9 @@
 
 // Variables
 @import "variables";
+@import "node_modules/include-media/dist/_include-media.scss";
 // Breakpoints
-@import "layout";
+$breakpoints: $grid-breakpoints;
 // Helpers
 @import "reset";
 @import "mixins";
@@ -57,12 +58,15 @@ body {
 	width: 100%;
 	-webkit-overflow-scrolling: touch;
 	overflow-x: hidden;
+	@include media('<xl') {
+		font-size: 2.1rem;
+	}
 	@include media("<xs") {
 		font-size: 1.6rem;
 	}
 }
 .gradient {
-	z-index: 9999;
+	z-index: 999;
 	width: 100%;
 	position: fixed;
 	left: 0;
@@ -79,24 +83,56 @@ body {
 }
 
 .main-wrap {
+	--gap: 10rem;
 	display: grid;
 	grid-template-columns: 1fr 1.75fr;
-	grid-column-gap: 10rem;
+	grid-column-gap: var(--gap);
 	width: 100%;
 	padding: 0 9rem;
+	@include media('<xxl') {
+		--gap: 6rem;
+		padding: 0 5rem;
+	}
+	@include media('<lg') {
+		--gap: 2rem;
+		padding: 0 3rem;
+	}
+	@include media('<md') {
+		grid-template-columns: 1fr;
+	}
+	.grid-placeholder {
+		@include media('<md') {
+			diplay: none;
+		}
+	}
 	.col {
 		&.left,
 		&.right {
 			padding: 9rem 0;
+			@include media('<xl') {
+				padding: 7rem 0;
+			}
+			@include media('<xl') {
+				padding: 6rem 0;
+			}
 		}
 		&.left {
-			height: 100vh;
-			position: fixed;
-			position: fixed;
+			@include media('>=md') {
+				height: 100vh;
+				width: calc(33.33333% - (var(--gap) / 2)); // for page load
+				max-width: 474px;
+				position: fixed;
+			}
 			display: flex;
 			flex-direction: column;
+			@include media('<md') {
+				padding-bottom: 3rem;
+			}
 		}
 		&.right {
+			@include media('<md') {
+				padding-top: 3rem;
+			}
 		}
 	}
 }
@@ -104,6 +140,9 @@ body {
 	display: flex;
 	gap: 1rem;
 	margin-top: auto;
+	@include media('<md') {
+		margin-top: 4rem;
+	}
 	svg {
 		width: 30px;
 		height: auto;
@@ -184,12 +223,6 @@ section {
 	flex-direction: column;
 	flex-wrap: wrap;
 	gap: var(--flexGap);
-}
-body.modal-open {
-	.modal-overlay {
-		display: block;
-		opacity: 1;
-	}
 }
 .term-head {
 	position: absolute;
@@ -307,6 +340,7 @@ body.modal-open {
 		margin-top: var(--termHead);
 	}
 	pre {
+		--indent: 33.6px;
 		padding: 0 4px;
 		border-radius: 0;
 		border-width: 0;
@@ -318,6 +352,23 @@ body.modal-open {
 			family: $font-code;
 			size: 14px;
 			weight: $text-regular;
+		}
+		word-wrap: break-word;
+		white-space: pre-wrap;
+		word-break: normal;
+		&.indent {
+			&-1 {
+				padding-left: calc(var(--indent)*1);
+			}
+			&-2 {
+				padding-left: calc(var(--indent)*2);
+			}
+			&-3 {
+				padding-left: calc(var(--indent)*3);
+			}
+			&-4 {
+				padding-left: calc(var(--indent)*4);
+			}
 		}
 	}
 	span {
@@ -382,11 +433,11 @@ body.modal-open {
 }
 // resume
 	// #education {
-	//     .college {
-	//         school: 'Purdue University';
-	//         degree: 'Bachelors of Science in Computer Graphics Technology';
-	//         timeline: calc(2010 - 2014);
-	//     }
+	// .college {
+	// 		school: 'Purdue University';
+	// 		degree: 'Bachelors of Science in Computer Graphics Technology';
+	// 		timeline: calc(2010 - 2014);
+	// }
 	// }
 	// #skills {
 	// 	languages: 'HTML5, CSS3, SCSS, JavaScript, JSON, jQuery, PHP, Shopify\'s Liquid,';
