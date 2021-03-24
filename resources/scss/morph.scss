@@ -50,14 +50,14 @@
 				top: 50% !important;
 				left: 50% !important;
 				// margin: -210px 0 0 -300px;
-				margin: -40vh 0 0 -40vw;
+				margin: calc(var(--vh, 1vh) * -40) 0 0 -40vw;
 				width: 80vw !important;
-				height: 80vh !important;
+				height: calc(var(--vh, 1vh) * 80) !important;
 				transition: width 0.4s 0.1s, height 0.4s 0.1s, top 0.4s 0.1s, left 0.4s 0.1s, margin 0.4s 0.1s;
 				transition-timing-function: cubic-bezier(0.7,0,0.3,1);
 				@include media('<xsm') {
 					--mobileW: calc(100vw - 3rem);
-					--mobileH: calc(100vh - 3rem);
+					--mobileH: calc((var(--vh, 1vh) * 100) - 3rem);
 					margin: calc(var(--mobileH) / -2) 0 0 calc(var(--mobileW) / -2);
 					width: var(--mobileW) !important;
 					height: var(--mobileH) !important;
