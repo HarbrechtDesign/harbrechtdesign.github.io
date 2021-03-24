@@ -116,7 +116,7 @@ function initModals() {
 			},
 			onAfterOpen : function() {
 				// can scroll again
-				canScroll();
+				noScroll();
 			},
 			onBeforeClose : function() {
 				// don't allow to scroll

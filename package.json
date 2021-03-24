@@ -31,6 +31,7 @@
 		"gulp-util": "^3.0.8",
 		"include-media": "^1.4.9",
 		"modernizr": "^3.11.6",
-		"node-sass": "^4.11.0"
+		"node-sass": "^4.11.0",
+		"velocityjs": "^2.0.3"
 	}
 }

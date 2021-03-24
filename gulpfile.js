@@ -29,7 +29,7 @@ gulp.task("css", function() {
 });
 gulp.task("js", function() {
 	gulp
-		.src("resources/js/modalMorph.js")
+		.src("resources/js/uiMorphingButton.js")
 		.pipe(gulp.dest("docs/js"))
 		.pipe(browserSync.reload({ stream: true, once: true }));
 	gulp
@@ -37,7 +37,7 @@ gulp.task("js", function() {
 		.pipe(gulp.dest("docs/js"))
 		.pipe(browserSync.reload({ stream: true, once: true }));
 	gulp
-		.src(["resources/js/velocity.min.js","./node_modules/@fancyapps/fancybox/dist/jquery.fancybox.min","./node_modules/body-scroll-lock/lib/bodyScrollLock.js", "resources/js/app.js"])
+		.src(["./node_modules/@fancyapps/fancybox/dist/jquery.fancybox.min","./node_modules/body-scroll-lock/lib/bodyScrollLock.js", "resources/js/app.js"])
 		.pipe(concat("app.js"))
 		.pipe(gulp.dest("docs/js"))
 		.on("error", function(err) {

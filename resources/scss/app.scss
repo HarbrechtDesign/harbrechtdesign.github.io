@@ -118,6 +118,9 @@ body {
 			@include media('<xl') {
 				padding: 6rem 0;
 			}
+			@include media('<sm') {
+				padding: 5rem 0;
+			}
 		}
 		&.left {
 			@include media('>=md') {
@@ -150,6 +153,7 @@ body {
 		width: 30px;
 		height: auto;
 		fill: white;
+		z-index: 1;
 	}
 	--px: 1px;
 	.squircle {
@@ -493,6 +497,12 @@ section {
 	transition: var(--modalTiming) var(--standard-ease);
 	@include box-shadow(3dp);
 	border-radius: 10px 10px 0 0;
+	& + .morph-content {
+		@include box-shadow(3dp);
+		.term-head .header-btn.red {
+			cursor: pointer;
+		}
+	}
 	header {
 		margin-top: var(--termHead);
 	}

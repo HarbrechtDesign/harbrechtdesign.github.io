@@ -94,6 +94,10 @@ h1 {
     h1 {
       font-size: 6rem;
       margin-bottom: 4rem; } }
+  @media (max-width: 674px) {
+    h1 {
+      font-size: 5rem;
+      margin-bottom: 3rem; } }
 
 h2, h3, h4, h5, h6 {
   color: #fff;
@@ -156,7 +160,8 @@ a {
   a.special {
     color: #03bb91;
     display: inline-block;
-    z-index: 1; }
+    z-index: 1;
+    font-weight: var(--text-regular); }
     a.special:hover, a.special:focus {
       color: #222a36; }
       a.special:hover::before, a.special:focus::before {
@@ -238,6 +243,13 @@ a {
   -webkit-transition-timing-function: cubic-bezier(0.7, 0, 0.3, 1);
        -o-transition-timing-function: cubic-bezier(0.7, 0, 0.3, 1);
           transition-timing-function: cubic-bezier(0.7, 0, 0.3, 1); }
+  @media (max-width: 479px) {
+    .morph-button.open .morph-content {
+      --mobileW: calc(100vw - 3rem);
+      --mobileH: calc(100vh - 3rem);
+      margin: calc(var(--mobileH) / -2) 0 0 calc(var(--mobileW) / -2);
+      width: var(--mobileW) !important;
+      height: var(--mobileH) !important; } }
   .morph-button.open .morph-content > .animate-wrap {
     visibility: visible;
     height: 100%;
@@ -477,6 +489,9 @@ body {
     @media (max-width: 1439px) {
       .main-wrap .col.left, .main-wrap .col.right {
         padding: 6rem 0; } }
+    @media (max-width: 674px) {
+      .main-wrap .col.left, .main-wrap .col.right {
+        padding: 5rem 0; } }
   .main-wrap .col.left {
     display: -webkit-box;
     display: -ms-flexbox;
@@ -511,7 +526,8 @@ body {
   .social svg {
     width: 30px;
     height: auto;
-    fill: white; }
+    fill: white;
+    z-index: 1; }
   .social .squircle {
     width: calc(var(--px)*52.1);
     height: calc(var(--px)*52.1);
@@ -796,6 +812,12 @@ section {
     @media (max-width: 674px) {
       .card__placeholder {
         width: 100%; } }
+  .card + .morph-content {
+    /* 1dp elevation */
+    -webkit-box-shadow: 0px 5px 6.58px 0.42px rgba(0, 0, 0, 0.24), 0px 2px 9.8px 0.2px rgba(0, 0, 0, 0.16);
+            box-shadow: 0px 5px 6.58px 0.42px rgba(0, 0, 0, 0.24), 0px 2px 9.8px 0.2px rgba(0, 0, 0, 0.16); }
+    .card + .morph-content .term-head .header-btn.red {
+      cursor: pointer; }
   .card header {
     margin-top: var(--termHead); }
   .card .content {

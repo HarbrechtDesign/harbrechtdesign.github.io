@@ -40,6 +40,7 @@
 
 	UIMorphingButton.prototype.options = {
 		closeEl : '',
+		closeEL2: '',
 		onBeforeOpen : function() { return false; },
 		onAfterOpen : function() { return false; },
 		onBeforeClose : function() { return false; },
@@ -49,6 +50,8 @@
 	UIMorphingButton.prototype._init = function() {
 		// the button
 		this.button = this.el.querySelector( 'button' );
+		// the browser X button
+		this.browserBtn = this.el.querySelector('.morph-content .header-btn.red');
 		// It's parent card
 		this.card = this.el.querySelector('.card__placeholder > .card');
 		// state
@@ -68,6 +71,7 @@
 			var closeEl = this.el.querySelector( this.options.closeEl );
 			if( closeEl ) {
 				closeEl.addEventListener( 'click', function() { self.toggle(); } );
+				this.browserBtn.addEventListener( 'click', function() { self.toggle(); } );
 			}
 		}
 	}
