@@ -57,10 +57,8 @@
 				transition-timing-function: cubic-bezier(0.7,0,0.3,1);
 				@include media('<xsm') {
 					--mobileW: calc(100vw - 3rem);
-					--mobileH: calc((var(--vh, 1vh) * 100) - 3rem);
 					margin: calc(var(--mobileH) / -2) 0 0 calc(var(--mobileW) / -2);
 					width: var(--mobileW) !important;
-					height: var(--mobileH) !important;
 				}
 				& > .animate-wrap {
 					visibility: visible;

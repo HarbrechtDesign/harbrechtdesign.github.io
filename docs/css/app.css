@@ -234,9 +234,9 @@ a {
   opacity: 1;
   top: 50% !important;
   left: 50% !important;
-  margin: -40vh 0 0 -40vw;
+  margin: calc(var(--vh, 1vh) * -40) 0 0 -40vw;
   width: 80vw !important;
-  height: 80vh !important;
+  height: calc(var(--vh, 1vh) * 80) !important;
   -webkit-transition: width 0.4s 0.1s, height 0.4s 0.1s, top 0.4s 0.1s, left 0.4s 0.1s, margin 0.4s 0.1s;
   -o-transition: width 0.4s 0.1s, height 0.4s 0.1s, top 0.4s 0.1s, left 0.4s 0.1s, margin 0.4s 0.1s;
   transition: width 0.4s 0.1s, height 0.4s 0.1s, top 0.4s 0.1s, left 0.4s 0.1s, margin 0.4s 0.1s;
@@ -246,10 +246,8 @@ a {
   @media (max-width: 479px) {
     .morph-button.open .morph-content {
       --mobileW: calc(100vw - 3rem);
-      --mobileH: calc(100vh - 3rem);
       margin: calc(var(--mobileH) / -2) 0 0 calc(var(--mobileW) / -2);
-      width: var(--mobileW) !important;
-      height: var(--mobileH) !important; } }
+      width: var(--mobileW) !important; } }
   .morph-button.open .morph-content > .animate-wrap {
     visibility: visible;
     height: 100%;
@@ -502,7 +500,7 @@ body {
             flex-direction: column; }
     @media (min-width: 980px) {
       .main-wrap .col.left {
-        height: 100vh;
+        height: calc(var(--vh, 1vh) * 100);
         width: calc(33.33333% - (var(--gap) / 2));
         max-width: 474px;
         position: fixed; } }
