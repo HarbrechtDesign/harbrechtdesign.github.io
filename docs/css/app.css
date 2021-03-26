@@ -246,7 +246,8 @@ a {
   @media (max-width: 479px) {
     .morph-button.open .morph-content {
       --mobileW: calc(100vw - 3rem);
-      margin: calc(var(--mobileH) / -2) 0 0 calc(var(--mobileW) / -2);
+      margin: calc(var(--vh, 1vh) * -45) 0 0 calc(var(--mobileW) / -2);
+      height: calc(var(--vh, 1vh) * 90) !important;
       width: var(--mobileW) !important; } }
   .morph-button.open .morph-content > .animate-wrap {
     visibility: visible;
