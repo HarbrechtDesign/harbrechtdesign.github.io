@@ -1,8 +1,8 @@
 // antialiasing mode font rendering
 
 @mixin font-smoothing {
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
 }
 $key-shadow: rgba(0,0,0,0.24);
 $ambient-shadow: rgba(0,0,0,0.16);
