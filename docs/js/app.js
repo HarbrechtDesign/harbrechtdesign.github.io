@@ -273,6 +273,18 @@ function setVH() {
 	*/
 }
 
+// WIP Modal
+//=====================================================================
+$(document).ready(function(){
+	var modal = $('#wip-modal'),
+		closeModal = $('#wip-modal button');
+	modal.addClass('open');
+	closeModal.click(function(){
+		modal.removeClass('open');
+	})
+})
+
+
 // Size left col
 //=====================================================================
 function sizeLeftCol(e) {
@@ -453,7 +465,6 @@ function projectsJSON() {
 		}
 	}
 
-	//Fetching job postings from Lever's postings API
 	$.ajax({
 		dataType: "json",
 		url: url,
