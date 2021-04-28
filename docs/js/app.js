@@ -306,21 +306,17 @@ $(window).on("load resize",function(e){
 // Size the cards for Masonry
 //=====================================================================
 function sizeCards() {
-
-	function thisHeight(){
-		return $(this).height();
-	}
 	var cardHeight = 0,
 		gap = 0;
 	$(".card__placeholder").each(function() {
-		var thisHMax = Math.max.apply(Math, $(this).map(thisHeight));
-		$(this).height(thisHMax);
+		var thisHMax = $(this).height();
+		// $(this).height(thisHMax);
 		cardHeight += thisHMax;
 		gap += 20; // account for flex-gap of 2rem
 	});
 	gap = gap - 40; // account for no gap for bottom 2 cards
 	if ($(window).width() > 674) {
-		$('#projects').css('max-height',(cardHeight + gap) / 2);
+		$('#projects').css('max-height',(cardHeight + gap + 200) / 2);
 	} else {
 		$('#projects').css('max-height','unset');
 	}
