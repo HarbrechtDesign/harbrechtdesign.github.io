@@ -1,69 +1,85 @@
-var gulp = require("gulp"),
-	gutil = require("gulp-util"),
-	sass = require("gulp-sass"),
-	header = require("gulp-header"),
-	browserSync = require("browser-sync"),
-	autoprefixer = require("gulp-autoprefixer"),
-	uglify = require("gulp-uglify"),
-	rename = require("gulp-rename"),
-	cssnano = require("gulp-cssnano"),
-	concat = require('gulp-concat');
+// Example gulp 4 file
+// https://gist.github.com/jeromecoupe/0b807b0c1050647eb340360902c3203a
 
-gulp.task("css", function() {
-	gulp
-		.src("node_modules/@fancyapps/fancybox/dist/jquery.fancybox.min.css")
-		.pipe(gulp.dest("docs/css"));
-	gulp
-		.src(["resources/scss/app.scss"])
-		// .pipe(concat("app.scss"))
+const { src, dest, watch, series } = require('gulp');
+const sass = require('gulp-sass')(require('sass'));
+const postcss = require('gulp-postcss');
+const cssnano = require('cssnano');
+const terser = require('gulp-terser');
+const browsersync = require('browser-sync').create();
+const autoprefixer = require('gulp-autoprefixer');
+const gutil = require('gulp-util');
+const rename = require('gulp-rename');
+const concat = require('gulp-concat');
+
+function cssLibraries() {
+	return src([
+			"node_modules/@fancyapps/fancybox/dist/jquery.fancybox.min.css"
+		])
+		.pipe(dest("docs/css"));
+}
+function jsLibraries() {
+	return src([
+			"resources/js/uiMorphingButton.js",
+			"node_modules/@fancyapps/fancybox/dist/jquery.fancybox.min.js",
+			"node_modules/body-scroll-lock/lib/bodyScrollLock.js",
+		])
+		.pipe(dest("docs/js"));
+}
+function css() {
+	return src("resources/scss/app.scss")
 		.pipe(sass({
 			debugInfo: true,
 			lineNumbers: true
 		}).on("error", sass.logError))
 		.pipe(autoprefixer("last 4 version"))
-		.pipe(gulp.dest("docs/css"))
-		.pipe(cssnano())
+		.pipe(dest("docs/css"))
+		.pipe(postcss([cssnano()]))
 		.pipe(rename({ suffix: ".min" }))
-		.pipe(gulp.dest("docs/css"))
-		.pipe(browserSync.reload({ stream: true }));
-});
-gulp.task("js", function() {
-	gulp
-		.src("resources/js/uiMorphingButton.js")
-		.pipe(gulp.dest("docs/js"))
-		.pipe(browserSync.reload({ stream: true, once: true }));
-	gulp
-		.src("resources/js/projects.json")
-		.pipe(gulp.dest("docs/js"))
-		.pipe(browserSync.reload({ stream: true, once: true }));
-	gulp
-		.src(["./node_modules/@fancyapps/fancybox/dist/jquery.fancybox.min","./node_modules/body-scroll-lock/lib/bodyScrollLock.js", "resources/js/app.js"])
+		.pipe(dest("docs/css"))
+}
+function js() {
+	return src([
+			"resources/js/app.js"
+		])
 		.pipe(concat("app.js"))
-		.pipe(gulp.dest("docs/js"))
+		.pipe(dest("docs/js"))
+		.pipe(terser())
 		.on("error", function(err) {
 			gutil.log(gutil.colors.red("[Error]"), err.toString());
 		})
-		.pipe(uglify())
 		.pipe(rename({ suffix: ".min" }))
-		.pipe(gulp.dest("docs/js"))
-		.pipe(browserSync.reload({ stream: true, once: true }));
-});
-
-gulp.task("browser-sync", function() {
-	browserSync.init(null, {
-		server: {
-			baseDir: "docs"
-		},
-		ghostMode: false
+		.pipe(dest("docs/js"))
+}
+function pageData() {
+	return src("resources/js/projects.json")
+		.pipe(dest("docs/js"))
+}
+function browsersyncServe(cb){
+	browsersync.init({
+	server: {
+		baseDir: 'docs'
+	}
 	});
-});
-gulp.task("bs-reload", function() {
-	browserSync.reload();
-});
+	cb();
+}
+function browsersyncReload(cb){
+	browsersync.reload();
+	cb();
+}
+function watchTask(){
+	watch('docs/*.html', browsersyncReload);
+	watch(['resources/scss/*.scss', 'resources/js/*.js'], series(css, js, browsersyncReload));
+	watch('resources/js/*.json', series(pageData, browsersyncReload));
+}
 
-gulp.task("default", ["css", "js","browser-sync"], function() {
-	gulp.watch("resources/scss/**/*.scss", ["css", "bs-reload"]);
-	gulp.watch("resources/js/*.js", ["js","bs-reload"]);
-	gulp.watch("resources/js/*.json", ["js","bs-reload"]);
-	gulp.watch("docs/*.html", ["bs-reload"]);
-});
+exports.default = series(
+	css,
+	js,
+	cssLibraries,
+	jsLibraries,
+	pageData,
+	browsersyncServe,
+	watchTask
+);
+
