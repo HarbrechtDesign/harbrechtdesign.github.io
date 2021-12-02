@@ -1,6 +1,4 @@
 /node_modules
-/docs/js
-/docs/css
 npm-debug.log
 .env
 /design
