@@ -120,6 +120,16 @@
 		}
 		.card {
 			justify-content: flex-start;
+			header {
+				padding-bottom: 2rem;
+			}
+			h3 {
+				margin-top: 1rem;
+				margin-bottom: 2rem;
+			}
+			img {
+				margin: 2rem auto;
+			}
 		}
 	}
 }

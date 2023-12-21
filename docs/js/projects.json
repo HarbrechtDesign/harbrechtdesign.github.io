@@ -3,13 +3,18 @@
 		{
 			"tags":
 			[
+				"HTML",
+				"CSS",
 				"JS",
+				"GraphQL",
 				"JSON",
-				"PHP"
+				"Web Design",
+				"Logo Design"
 			],
-			"title": "Job Posting API Integration",
-			"body": "<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aperiam vitae quibusdam laboriosam numquam sapiente accusamus facilis at quidem natus suscipit excepturi reprehenderit omnis sunt laudantium dicta delectus, rem tenetur deleniti.</p><p>Lorem ipsum, dolor, sit amet consectetur adipisicing elit. Porro cumque corrupti iusto voluptatum provident dolorem nulla, tempore velit odit enim quo modi, in iste ratione a. Reiciendis rem, aperiam voluptate!</p><p>Unde soluta maiores quos esse minus nobis, non quasi hic id tempore illum impedit doloremque nesciunt atque, illo sunt! Veniam culpa mollitia impedit debitis consequatur amet consectetur pariatur unde voluptas.</p>",
-			"externalUrl": "https://google.com"
+			"title": "Esport Team Site + Live Data Display",
+			"screenshot": "Esport_Team_Site--Live_Data_Display.jpg",
+			"body": "<p>This was a combo personal project + learning experiment for me. I wanted to create a website an amateur Esports team that I'm a member of. Initially I just wanted to get a web presence up for the team, as a way to get more recruits and display our accomplishments. That snowballed into adding <a href='https://twitch.com' target='_blank' rel='noopener'>Twitch</a> stream integration, a REST API call to a <a href='https://raider.io' target='_blank' rel='noopener'>data-aggregate website</a> for raid-wide progression, and a <a href='https://warcraftlogs.com' target='_blank' rel='noopener'>GraphQL call via cURL</a>, cached via PHP, and displayed via JSON to display real-time progression rendered via ChartJS. Getting the Chart to work was the biggest piece to this puzzle, and took a lot of learning, as well as endless trial & error to get all the logic gates in place.</p><p>I also designed the entire site (It's pretty vanilla, I know), as well as creating two Logos for the team. The primary logo utilized stock art that I modified and recolored, in combination with a custom typeface treatment. Big shout out to Kate at The Grossbauer Group for giving me some crucial feedback on the text treatment! This one started with a unique font, and then playing with each character to get a unique look and feel. I'm really happy with how the text logo turned out.</p>",
+			"externalUrl": "https://commit-guild.com/"
 		},
 		{
 			"tags":
@@ -17,128 +22,55 @@
 				"HTML",
 				"CSS",
 				"JS",
-				"PHP"
+				"REST API",
+				"JSON"
 			],
-			"title": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt",
-			"body": "<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aperiam vitae quibusdam laboriosam numquam sapiente accusamus facilis at quidem natus suscipit excepturi reprehenderit omnis sunt laudantium dicta delectus, rem tenetur deleniti.</p><p>Lorem ipsum, dolor, sit amet consectetur adipisicing elit. Porro cumque corrupti iusto voluptatum provident dolorem nulla, tempore velit odit enim quo modi, in iste ratione a. Reiciendis rem, aperiam voluptate!</p><p>Unde soluta maiores quos esse minus nobis, non quasi hic id tempore illum impedit doloremque nesciunt atque, illo sunt! Veniam culpa mollitia impedit debitis consequatur amet consectetur pariatur unde voluptas.</p>",
-			"externalUrl": "https://google.com"
+			"title": "YouTube API - Playlist Listing",
+			"body": "<p>A client project required building a component to display a variety of YouTube videos. To avoid repetitive data entry, I looked into utilizing YouTube's API. This led me to the Playlist API, which seemed like the best place to start. This project went through quite a few iterations before ending up here, but I'm pretty happy with the outcome. I know a good amount of JS could be written better, but it got the job done.</p>",
+			"externalUrl": "https://codepen.io/Charbrec/pen/vYroOmY"
 		},
 		{
 			"tags":
 			[
 				"HTML",
 				"CSS",
-				"JS",
-				"PHP"
+				"JS"
 			],
-			"title": "Building a complicated project with a longer title than usual",
-			"body": "<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aperiam vitae quibusdam laboriosam numquam sapiente accusamus facilis at quidem natus suscipit excepturi reprehenderit omnis sunt laudantium dicta delectus, rem tenetur deleniti.</p><p>Lorem ipsum, dolor, sit amet consectetur adipisicing elit. Porro cumque corrupti iusto voluptatum provident dolorem nulla, tempore velit odit enim quo modi, in iste ratione a. Reiciendis rem, aperiam voluptate!</p><p>Unde soluta maiores quos esse minus nobis, non quasi hic id tempore illum impedit doloremque nesciunt atque, illo sunt! Veniam culpa mollitia impedit debitis consequatur amet consectetur pariatur unde voluptas.</p>",
-			"externalUrl": "https://google.com"
-		},
-		{
-			"tags":
-			[
-				"JS",
-				"JSON",
-				"PHP"
-			],
-			"title": "sit amet purus gravida quis blandit turpis cursus",
-			"body": "<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aperiam vitae quibusdam laboriosam numquam sapiente accusamus facilis at quidem natus suscipit excepturi reprehenderit omnis sunt laudantium dicta delectus, rem tenetur deleniti.</p><p>Lorem ipsum, dolor, sit amet consectetur adipisicing elit. Porro cumque corrupti iusto voluptatum provident dolorem nulla, tempore velit odit enim quo modi, in iste ratione a. Reiciendis rem, aperiam voluptate!</p><p>Unde soluta maiores quos esse minus nobis, non quasi hic id tempore illum impedit doloremque nesciunt atque, illo sunt! Veniam culpa mollitia impedit debitis consequatur amet consectetur pariatur unde voluptas.</p>",
-			"externalUrl": "https://google.com"
+			"title": "Automated Slider for Text & Images",
+			"body": "<p>This component was built for a recent project (2023), where we needed to display user testimonials with a given design. Once the logic to rotate through items was done, I was able to get pretty creative with the controls. The design dictated that the item indicators where solid circles with an outline. I had the idea to use the outline as a progress indicator, giving the user an indication of when the slider was going to update. Converting this object into an SVG let me use a CSS variable to indicate the rotation of the outline, which I could then manipulate via JS. When an item becomes active, it's indication circle gets an outline that slowly rotates around, shrinking until it disappears, and the next slide shows. I also wanted to let users pause the slideshow for accessibility, and for ease of consuming the content. Upon mouse-over, a pause indicator appears, and the circle animation resets and pauses, restarting on mouse-out.</p>",
+			"externalUrl": "https://codepen.io/Charbrec/pen/KKGgLWd"
 		},
 		{
 			"tags":
 			[
 				"HTML",
 				"CSS",
-				"JS",
-				"PHP"
+				"JS"
 			],
-			"title": "nunc faucibus a pellentesque sit amet porttitor eget dolor morbi non arcu",
-			"body": "<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aperiam vitae quibusdam laboriosam numquam sapiente accusamus facilis at quidem natus suscipit excepturi reprehenderit omnis sunt laudantium dicta delectus, rem tenetur deleniti.</p><p>Lorem ipsum, dolor, sit amet consectetur adipisicing elit. Porro cumque corrupti iusto voluptatum provident dolorem nulla, tempore velit odit enim quo modi, in iste ratione a. Reiciendis rem, aperiam voluptate!</p><p>Unde soluta maiores quos esse minus nobis, non quasi hic id tempore illum impedit doloremque nesciunt atque, illo sunt! Veniam culpa mollitia impedit debitis consequatur amet consectetur pariatur unde voluptas.</p>",
-			"externalUrl": "https://google.com"
+			"title": "Infinite-scrolling image slider",
+			"body": "<p>This was an older project, originally created in 2017. I wanted to make a super simple image slider that could go on forever, without visually restarting. I also wanted some keyboard support, because that seemed neat. Looking back, this definitely wasn't a master piece by any means. But at the time, my JavaScript skills where extremely limited, relying heavily on jQuery to get things working. It's fun to see how my JS skills have evolved over time.</p>",
+			"externalUrl": "https://codepen.io/Charbrec/pen/mBYmod"
+		},
+		{
+			"tags":
+			[
+				"HTML",
+				"CSS"
+			],
+			"title": "CSS Hamburger Buttons",
+			"body": "<p>Here's a simple demo of some CSS hamburger menu buttons I created with interesting on-click animations. I'm really fond of this design and animation - it feels really natural to me. My favorite is the 2nd one, with asymmetrical line widths. The way it smoothly evolves into an arrow on click just tickles my brain. I've used this exact menu in multiple sites over the years as well.</p>",
+			"externalUrl": "https://codepen.io/Charbrec/pen/abzKawY"
 		},
 		{
 			"tags":
 			[
 				"HTML",
 				"CSS",
-				"JS",
-				"PHP"
+				"JS"
 			],
-			"title": "Building a complicated project with a longer title than usual",
-			"body": "<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aperiam vitae quibusdam laboriosam numquam sapiente accusamus facilis at quidem natus suscipit excepturi reprehenderit omnis sunt laudantium dicta delectus, rem tenetur deleniti.</p><p>Lorem ipsum, dolor, sit amet consectetur adipisicing elit. Porro cumque corrupti iusto voluptatum provident dolorem nulla, tempore velit odit enim quo modi, in iste ratione a. Reiciendis rem, aperiam voluptate!</p><p>Unde soluta maiores quos esse minus nobis, non quasi hic id tempore illum impedit doloremque nesciunt atque, illo sunt! Veniam culpa mollitia impedit debitis consequatur amet consectetur pariatur unde voluptas.</p>",
-			"externalUrl": "https://google.com"
-		},
-		{
-			"tags":
-			[
-				"JS",
-				"JSON",
-				"PHP"
-			],
-			"title": "Job Posting API Integration",
-			"body": "<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aperiam vitae quibusdam laboriosam numquam sapiente accusamus facilis at quidem natus suscipit excepturi reprehenderit omnis sunt laudantium dicta delectus, rem tenetur deleniti.</p><p>Lorem ipsum, dolor, sit amet consectetur adipisicing elit. Porro cumque corrupti iusto voluptatum provident dolorem nulla, tempore velit odit enim quo modi, in iste ratione a. Reiciendis rem, aperiam voluptate!</p><p>Unde soluta maiores quos esse minus nobis, non quasi hic id tempore illum impedit doloremque nesciunt atque, illo sunt! Veniam culpa mollitia impedit debitis consequatur amet consectetur pariatur unde voluptas.</p>",
-			"externalUrl": "https://google.com"
-		},
-		{
-			"tags":
-			[
-				"HTML",
-				"CSS",
-				"JS",
-				"PHP"
-			],
-			"title": "Wordpress Site Development",
-			"body": "<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aperiam vitae quibusdam laboriosam numquam sapiente accusamus facilis at quidem natus suscipit excepturi reprehenderit omnis sunt laudantium dicta delectus, rem tenetur deleniti.</p><p>Lorem ipsum, dolor, sit amet consectetur adipisicing elit. Porro cumque corrupti iusto voluptatum provident dolorem nulla, tempore velit odit enim quo modi, in iste ratione a. Reiciendis rem, aperiam voluptate!</p><p>Unde soluta maiores quos esse minus nobis, non quasi hic id tempore illum impedit doloremque nesciunt atque, illo sunt! Veniam culpa mollitia impedit debitis consequatur amet consectetur pariatur unde voluptas.</p>",
-			"externalUrl": "https://google.com"
-		},
-		{
-			"tags":
-			[
-				"HTML",
-				"CSS",
-				"JS",
-				"PHP"
-			],
-			"title": "Building a complicated project with a longer title than usual",
-			"body": "<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aperiam vitae quibusdam laboriosam numquam sapiente accusamus facilis at quidem natus suscipit excepturi reprehenderit omnis sunt laudantium dicta delectus, rem tenetur deleniti.</p><p>Lorem ipsum, dolor, sit amet consectetur adipisicing elit. Porro cumque corrupti iusto voluptatum provident dolorem nulla, tempore velit odit enim quo modi, in iste ratione a. Reiciendis rem, aperiam voluptate!</p><p>Unde soluta maiores quos esse minus nobis, non quasi hic id tempore illum impedit doloremque nesciunt atque, illo sunt! Veniam culpa mollitia impedit debitis consequatur amet consectetur pariatur unde voluptas.</p>",
-			"externalUrl": "https://google.com"
-		},
-		{
-			"tags":
-			[
-				"JS",
-				"JSON",
-				"PHP"
-			],
-			"title": "Job Posting API Integration",
-			"body": "<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aperiam vitae quibusdam laboriosam numquam sapiente accusamus facilis at quidem natus suscipit excepturi reprehenderit omnis sunt laudantium dicta delectus, rem tenetur deleniti.</p><p>Lorem ipsum, dolor, sit amet consectetur adipisicing elit. Porro cumque corrupti iusto voluptatum provident dolorem nulla, tempore velit odit enim quo modi, in iste ratione a. Reiciendis rem, aperiam voluptate!</p><p>Unde soluta maiores quos esse minus nobis, non quasi hic id tempore illum impedit doloremque nesciunt atque, illo sunt! Veniam culpa mollitia impedit debitis consequatur amet consectetur pariatur unde voluptas.</p>",
-			"externalUrl": "https://google.com"
-		},
-		{
-			"tags":
-			[
-				"HTML",
-				"CSS",
-				"JS",
-				"PHP"
-			],
-			"title": "Wordpress Site Development",
-			"body": "<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aperiam vitae quibusdam laboriosam numquam sapiente accusamus facilis at quidem natus suscipit excepturi reprehenderit omnis sunt laudantium dicta delectus, rem tenetur deleniti.</p><p>Lorem ipsum, dolor, sit amet consectetur adipisicing elit. Porro cumque corrupti iusto voluptatum provident dolorem nulla, tempore velit odit enim quo modi, in iste ratione a. Reiciendis rem, aperiam voluptate!</p><p>Unde soluta maiores quos esse minus nobis, non quasi hic id tempore illum impedit doloremque nesciunt atque, illo sunt! Veniam culpa mollitia impedit debitis consequatur amet consectetur pariatur unde voluptas.</p>",
-			"externalUrl": "https://google.com"
-		},
-		{
-			"tags":
-			[
-				"HTML",
-				"CSS",
-				"JS",
-				"PHP"
-			],
-			"title": "Building a complicated project with a longer title than usual",
-			"body": "<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aperiam vitae quibusdam laboriosam numquam sapiente accusamus facilis at quidem natus suscipit excepturi reprehenderit omnis sunt laudantium dicta delectus, rem tenetur deleniti.</p><p>Lorem ipsum, dolor, sit amet consectetur adipisicing elit. Porro cumque corrupti iusto voluptatum provident dolorem nulla, tempore velit odit enim quo modi, in iste ratione a. Reiciendis rem, aperiam voluptate!</p><p>Unde soluta maiores quos esse minus nobis, non quasi hic id tempore illum impedit doloremque nesciunt atque, illo sunt! Veniam culpa mollitia impedit debitis consequatur amet consectetur pariatur unde voluptas.</p>",
-			"externalUrl": "https://google.com"
+			"title": "Simple QR Code Generator",
+			"body": "<p>This was a fun project - I wanted a way to quickly generate QR codes for a variety of content, without having to rely on third-party websites that are brimming with ads and bloatware. It's a basic form that hooks into an endpoint from image-charts.com. Simple, but effective.</p>",
+			"externalUrl": "https://codepen.io/Charbrec/pen/GRWvjjR"
 		}
 	]
 }

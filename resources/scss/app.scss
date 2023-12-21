@@ -492,7 +492,8 @@ section {
 	height: 100%;
 	background: var(--darker);
 	position: relative;
-	padding: 2rem;
+	padding: 2rem 0;
+	// margin-bottom: 2rem;
 	transition: var(--modalTiming) var(--standard-ease);
 	@include box-shadow(3dp);
 	border-radius: 10px 10px 0 0;
@@ -502,20 +503,34 @@ section {
 			cursor: pointer;
 		}
 	}
+	header,
+	.preview_title,
+	.content {
+		padding: 0 2rem;
+	}
 	header {
 		margin-top: var(--termHead);
 	}
 	.content {
 		padding-bottom: 2rem;
+		overflow-y: scroll;
+		display: flex;
+		flex-direction: column;
+	}
+	// codepen block
+	.cp_embed_wrapper {
+		margin: 2rem 0;
 	}
 	h4 {
-		font-size: 1.6rem;
+		font-size: 1.4rem;
 		color: var(--text-color);
 	}
 	h3 {
 		font-size: 2.4rem;
-		margin-top: 4rem;
-		margin-bottom: 2rem;
+		// margin-top: 4rem;
+		// margin-bottom: 2rem;
+		margin: 2rem 0 3rem;
+		max-width: 90%;
 	}
 	// .modal-content {
 	// 	display: none;

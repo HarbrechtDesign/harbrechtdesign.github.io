@@ -52,7 +52,7 @@ function sizeCards() {
 		cardHeight += thisHMax;
 		gap += 20; // account for flex-gap of 2rem
 	});
-	gap = gap - 40; // account for no gap for bottom 2 cards
+	// gap = gap - 40; // account for no gap for bottom 2 cards
 	if ($(window).width() > 674) {
 		$('#projects').css('max-height',(cardHeight + gap + 200) / 2);
 	} else {
@@ -75,7 +75,6 @@ function sizeCards() {
 	});
 	
 }
-
 
 // Create Modals
 //=====================================================================
@@ -151,7 +150,15 @@ function projectsJSON() {
 		for(i = 0; i < _data.projects.length; i++) {
 			var projects = _data.projects[i],
 				cleanTags = $.trim(projects.tags).replaceAll(',', ', '),
-				cardTemplate = `
+				url = projects.externalUrl,
+				codepenID;
+			if (url.includes("codepen")) {
+				let array = url.split('/');
+				codepenID = array[array.length-1];
+			} else {
+				codepenID = '';
+			}
+			var cardTemplate = `
 					<div class="card__placeholder morph-button">
 						<div class="card">
 							<div class="term-head">
@@ -164,7 +171,7 @@ function projectsJSON() {
 							<header>
 								<h4>${cleanTags}</h4>
 							</header>
-							<div>
+							<div class="preview_title">
 								<h3>${projects.title}</h3>
 								<button type="button">View</button>
 							</div>
@@ -185,10 +192,31 @@ function projectsJSON() {
 									</header>
 									<div class="content">
 										<h3>${projects.title}</h3>
-										<p>${projects.body}</p>
+										${projects.body}
 										<a href="${projects.externalUrl}">View Project 
 											<svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 12 12" aria-hidden="true"><title>External link icon</title><path d="M10.976 1.193A.314.314 0 0010.687 1H6.312a.313.313 0 000 .625h3.62L5.467 6.091a.313.313 0 00.443.442l4.466-4.466v3.62a.313.313 0 00.625 0V1.313a.328.328 0 00-.024-.119z"></path><path d="M3.5 1v.625H2.25a.625.625 0 00-.625.625v7.5c0 .345.28.625.625.625h7.5c.345 0 .625-.28.625-.625V8.5H11v1.875c0 .345-.28.625-.625.625h-8.75A.625.625 0 011 10.375v-8.75C1 1.28 1.28 1 1.625 1H3.5z"></path></svg>
 										</a>
+										${(() => {
+											if (projects.screenshot) {
+												return `
+													<img src="/img/${projects.screenshot}">
+												`
+											} else {
+												return '';
+											}
+										})()}
+										${(() => {
+											if (codepenID.length > 1) {
+												return `
+													<p class="codepen" data-height="499" data-theme-id="dark" data-default-tab="result" data-slug-hash="${codepenID}" data-user="Charbrec" style="height: 499px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;">
+														<span>See the Pen <a href="https://codepen.io/Charbrec/pen/vYroOmY">Youtube API Playlist Listing</a> by Cameron Harbrecht (<a href="https://codepen.io/Charbrec">@Charbrec</a>) on <a href="https://codepen.io">CodePen</a>.</span>
+													</p>
+													<script async src="https://cpwebassets.codepen.io/assets/embed/ei.js"></script>
+												`
+											} else {
+												return '';
+											}
+										})()}
 									</div>
 								</div>
 							</div>
@@ -199,17 +227,27 @@ function projectsJSON() {
 		}
 	}
 
-	$.ajax({
-		dataType: "json",
-		url: url,
-		success: function(data){
-			createProjects(data);
-			sizeCards();
-			initModals();
-		}
+	// $.ajax({
+	// 	dataType: "json",
+	// 	url: url,
+	// 	success: function(data){
+	// 		createProjects(data);
+	// 		sizeCards();
+	// 		initModals();
+	// 	}
+	// });
+	fetch(url)
+	.then((res) => res.json())
+	.then((data) => {
+		// do stuff with the data
+		createProjects(data);
+		sizeCards();
+		initModals();
 	});
 }
 projectsJSON();
+
+
 
 
 // Modal card handling
