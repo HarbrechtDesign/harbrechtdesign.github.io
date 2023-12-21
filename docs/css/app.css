@@ -369,6 +369,9 @@ a.special::before {
   margin-top: 1rem;
   margin-bottom: 2rem;
 }
+.morph-content .card h4 {
+  padding-right: 3rem;
+}
 .morph-content .card img {
   margin: 2rem auto;
 }
